@@ -1,8 +1,14 @@
+/* ==========================================================================
+   LO-FI / WIREFRAME DESIGN SYSTEM (index.css)
+   ========================================================================== */
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f5f5f5;
+  color: #000000;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
@@ -13,17 +19,34 @@ body {
 
 a {
   text-decoration: none;
-  color: #0066cc;
+  color: #000000;
+  font-weight: bold;
 }
 
 a:hover {
   text-decoration: underline;
+  background-color: #000000;
+  color: #ffffff;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+/* ==========================================================================
+   Layout Blocks
+   ========================================================================== */
 
 /* Navbar */
 .navbar {
-  background-color: #333;
-  color: white;
+  background-color: #ffffff;
+  border-bottom: 3px solid #000000;
   padding: 15px 20px;
 }
 
@@ -38,93 +61,126 @@ a:hover {
 .navbar-logo {
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  border: 2px solid #000000;
+  padding: 5px 10px;
+  background-color: #e0e0e0;
+}
+
+.navbar-logo:hover {
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 15px;
   margin: 0;
   padding: 0;
 }
 
 .navbar-link {
-  color: #ccc;
-  font-size: 16px;
+  border: 2px solid transparent;
+  padding: 5px 10px;
+  font-size: 15px;
 }
 
 .navbar-link:hover, .navbar-link.active {
-  color: white;
+  border-color: #000000;
+  background-color: #e0e0e0;
+  color: #000000;
+  text-decoration: none;
 }
 
 .navbar-login-btn {
-  background-color: #0066cc;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
+  border: 2px solid #000000;
+  padding: 5px 15px;
+  background-color: #000000;
+  color: #ffffff !important;
 }
 
-.navbar-login-btn:hover {
-  background-color: #0052a3;
-  color: white;
-  text-decoration: none;
+.navbar-login-btn:hover, .navbar-login-btn.active {
+  background-color: #ffffff;
+  color: #000000 !important;
 }
 
 .menu-toggle {
   display: none;
-  background: none;
-  border: none;
-  color: white;
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
   font-size: 20px;
   cursor: pointer;
+  padding: 5px 10px;
 }
 
-/* Main Content */
+/* Main Content Area */
 .main-content {
   flex: 1;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px 20px;
   width: 100%;
+  box-sizing: border-box;
 }
+
+/* Footer Section */
+.footer {
+  background-color: #ffffff;
+  border-top: 3px solid #000000;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Pages & Page Elements (Home, About, etc.)
+   ========================================================================== */
 
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: 50px 20px;
-  background-color: #e9ecef;
-  border-radius: 8px;
-  margin-bottom: 30px;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  margin-bottom: 40px;
 }
 
 .hero-title {
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #111;
+  font-size: 42px;
+  margin-bottom: 15px;
 }
 
 .hero-subtitle {
   font-size: 18px;
-  color: #666;
-  margin-bottom: 20px;
+  color: #555555;
+  margin-bottom: 25px;
+  text-transform: uppercase;
 }
 
 .hero-cta {
-  background-color: #28a745;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
+  border: 2px solid #000000;
+  font-family: inherit;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .hero-cta:hover {
-  background-color: #218838;
+  background-color: #000000;
+  color: #ffffff;
 }
 
-/* Cards Container */
+/* Reusable Card (Wireframe Box) */
 .cards-container {
   display: flex;
   gap: 20px;
@@ -132,62 +188,60 @@ a:hover {
 }
 
 .glass-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 24px;
   flex: 1;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
 }
 
 .card-icon {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 15px;
+  border: 2px dashed #000000;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
 }
 
 .card-title {
-  font-size: 20px;
-  margin: 0 0 10px 0;
-  color: #222;
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
 }
 
 .card-description {
   font-size: 14px;
-  color: #555;
+  color: #555555;
   line-height: 1.5;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .card-link {
   margin-top: auto;
-  color: #0066cc;
-  font-weight: bold;
-}
-
-/* Footer */
-.footer {
-  background-color: #f8f9fa;
-  border-top: 1px solid #eee;
-  padding: 15px;
+  border: 2px solid #000000;
+  padding: 6px 12px;
   text-align: center;
+  background-color: #e0e0e0;
 }
 
-.footer p {
-  margin: 0;
-  font-size: 14px;
-  color: #777;
+.card-link:hover {
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* Placeholder page */
+/* Placeholder Page */
 .placeholder-page {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 40px;
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  padding: 50px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .placeholder-page h1 {
@@ -197,8 +251,352 @@ a:hover {
 
 .placeholder-page p {
   font-size: 16px;
-  color: #666;
+  color: #555555;
+  text-transform: uppercase;
 }
+
+/* ==========================================================================
+   UI Component Library (Lo-Fi)
+   ========================================================================== */
+
+/* Buttons */
+.lofi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: bold;
+  border: 2px solid #000000;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.btn-md {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #000000;
+}
+
+.btn-secondary:hover {
+  background-color: #c0c0c0;
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-outline:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-disabled {
+  background-color: #f0f0f0;
+  color: #999999;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Input Fields */
+.lofi-input-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.lofi-input-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.lofi-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 2px solid #000000;
+  border-radius: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.lofi-input:focus {
+  outline: none;
+  background-color: #f9f9f9;
+  border-style: dashed;
+}
+
+.lofi-input.input-error {
+  border-style: dotted;
+  border-width: 3px;
+}
+
+.lofi-input:disabled {
+  background-color: #e0e0e0;
+  border-color: #999999;
+  cursor: not-allowed;
+}
+
+.lofi-input-error-msg {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* Modal Overlay & Panel */
+.lofi-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lofi-modal-wrapper {
+  background-color: #ffffff;
+  border: 3px double #000000;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lofi-modal-header {
+  padding: 15px 20px;
+  border-bottom: 2px solid #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.lofi-modal-title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.lofi-modal-close {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lofi-modal-close:hover {
+  text-decoration: underline;
+}
+
+.lofi-modal-body {
+  padding: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.lofi-modal-footer {
+  padding: 15px 20px;
+  border-top: 2px solid #000000;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background-color: #f5f5f5;
+}
+
+/* Toast Alerts */
+.lofi-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+}
+
+.lofi-toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border: 2px solid #000000;
+  min-width: 300px;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.toast-success {
+  background-color: #e0e0e0;
+  border-style: solid;
+}
+
+.toast-error {
+  background-color: #e0e0e0;
+  border-style: dashed;
+}
+
+.toast-info {
+  background-color: #e0e0e0;
+  border-style: dotted;
+}
+
+.lofi-toast-message {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.lofi-toast-close {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lofi-toast-close:hover {
+  text-decoration: underline;
+}
+
+/* Loaders / Animations */
+.lofi-loader-box {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #000000;
+  display: inline-block;
+  position: relative;
+  animation: lofiSpin 1.5s linear infinite;
+}
+
+.lofi-loader-inner {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 2px dashed #000000;
+}
+
+.loader-box-sm {
+  width: 18px;
+  height: 18px;
+}
+.loader-box-sm .lofi-loader-inner {
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+.loader-box-md {
+  width: 32px;
+  height: 32px;
+}
+
+.loader-box-lg {
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+}
+
+.lofi-loader-text {
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: lofiFlash 1s steps(2, start) infinite;
+}
+
+.loader-text-sm {
+  font-size: 11px;
+}
+
+.loader-text-md {
+  font-size: 14px;
+}
+
+.loader-text-lg {
+  font-size: 18px;
+}
+
+@keyframes lofiSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes lofiFlash {
+  to { visibility: hidden; }
+}
+
+/* Showcase Playground layout styling */
+.lofi-showcase-container h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #000000;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.lofi-section {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 24px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.lofi-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-bottom: 2px dashed #000000;
+  padding-bottom: 8px;
+}
+
+.lofi-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Responsive Styling
+   ========================================================================== */
 
 @media (max-width: 768px) {
   .navbar-container {
@@ -211,6 +609,8 @@ a:hover {
     width: 100%;
     margin-top: 15px;
     display: none;
+    border-top: 2px solid #000000;
+    padding-top: 15px;
   }
   
   .navbar-menu.open {

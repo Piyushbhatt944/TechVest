@@ -36,6 +36,11 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/showcase" className="navbar-link" onClick={() => setIsOpen(false)}>
+              Showcase
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/login" className="navbar-login-btn" onClick={() => setIsOpen(false)}>
               Login
             </NavLink>

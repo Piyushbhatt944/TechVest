@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
+import ComponentShowcase from './pages/ComponentShowcase';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/showcase" element={<ComponentShowcase />} />
           </Routes>
         </main>
         <Footer />
