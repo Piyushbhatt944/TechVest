@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 
 /**
- * Lo-fi style Modal component.
+ * Reusable Modal dialog component.
  * 
  * @param {Object} props - The component props.
  * @param {boolean} props.isOpen - Controls whether the modal is visible.
  * @param {function} props.onClose - Function to trigger when closing the modal.
  * @param {string} [props.title] - The title of the modal header.
- * @param {React.ReactNode} props.children - The body content.
- * @param {React.ReactNode} [props.footer] - Optional footer content.
+ * @param {React.ReactNode} props.children - The body content of the modal.
+ * @param {React.ReactNode} [props.footer] - Optional footer content (e.g. actions buttons).
  */
 function Modal({
   isOpen,
@@ -17,6 +17,7 @@ function Modal({
   children,
   footer
 }) {
+  // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -31,18 +32,18 @@ function Modal({
   if (!isOpen) return null;
 
   return (
-    <div className="lofi-modal-overlay" onClick={onClose}>
-      <div className="lofi-modal-wrapper" onClick={(e) => e.stopPropagation()}>
-        <div className="lofi-modal-header">
-          {title && <h3 className="lofi-modal-title">[Modal: {title}]</h3>}
-          <button className="lofi-modal-close" onClick={onClose} aria-label="Close modal">
-            [ X ]
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          {title && <h3 className="modal-title">{title}</h3>}
+          <button className="modal-close" onClick={onClose} aria-label="Close modal">
+            &times;
           </button>
         </div>
-        <div className="lofi-modal-body">
+        <div className="modal-body">
           {children}
         </div>
-        {footer && <div className="lofi-modal-footer">{footer}</div>}
+        {footer && <div className="modal-footer">{footer}</div>}
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import React from 'react';
 
 /**
- * Lo-fi style Button component.
+ * Reusable Button component.
  * 
  * @param {Object} props - The component props.
  * @param {React.ReactNode} props.children - The content to display inside the button.
- * @param {string} [props.variant='primary'] - The style variant ('primary', 'secondary', 'outline').
+ * @param {string} [props.variant='primary'] - The style variant ('primary', 'secondary', 'danger', 'outline').
  * @param {string} [props.size='md'] - The size ('sm', 'md', 'lg').
  * @param {function} [props.onClick] - The click handler function.
  * @param {boolean} [props.disabled=false] - Whether the button is disabled.
@@ -19,7 +19,7 @@ function Button({
   disabled = false, 
   type = 'button' 
 }) {
-  const className = `lofi-btn btn-${variant} btn-${size} ${disabled ? 'btn-disabled' : ''}`;
+  const className = `custom-btn btn-${variant} btn-${size} ${disabled ? 'btn-disabled' : ''}`;
 
   return (
     <button

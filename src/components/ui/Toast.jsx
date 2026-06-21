@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 /**
- * Lo-fi style Toast component.
+ * Reusable Toast notification component.
  * 
  * @param {Object} props - The component props.
  * @param {string} props.message - The notification message content.
@@ -30,11 +30,11 @@ function Toast({
   if (!visible) return null;
 
   return (
-    <div className="lofi-toast-container">
-      <div className={`lofi-toast toast-${type}`}>
-        <span className="lofi-toast-message">TOAST ({type.toUpperCase()}): {message}</span>
-        <button className="lofi-toast-close" onClick={onClose} aria-label="Dismiss notification">
-          [X]
+    <div className="toast-container">
+      <div className={`toast toast-${type}`}>
+        <span className="toast-message">{message}</span>
+        <button className="toast-close" onClick={onClose} aria-label="Dismiss notification">
+          &times;
         </button>
       </div>
     </div>

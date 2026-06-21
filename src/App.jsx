@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,10 +10,16 @@ import ComponentShowcase from './pages/ComponentShowcase';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState('dark'); // Default to dark mode for premium look
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <Router>
-      <div className="app-container">
-        <Navbar />
+      <div className={`app-container theme-${theme}`}>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
